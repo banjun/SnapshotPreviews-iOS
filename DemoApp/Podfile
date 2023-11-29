@@ -25,3 +25,9 @@ target 'DemoModule' do
   # Pods for DemoModule
 
 end
+
+post_install do |pi|
+  UI.info "⚠️  run patch after pod install:"
+  UI.info "⚡ patch -p2 < PodPatch-add-core-deps.patch"
+  UI.info "... or manually add framework dependencies on Pods targets, PreviewGallery deps on SnapshotPreviewsCore and SnapshotPreferences deps on SnapshotPreviewsCore"
+end
