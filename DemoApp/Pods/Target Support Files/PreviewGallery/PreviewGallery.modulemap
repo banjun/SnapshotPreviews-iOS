@@ -1,0 +1,6 @@
+framework module PreviewGallery {
+  umbrella header "PreviewGallery-umbrella.h"
+
+  export *
+  module * { export * }
+}

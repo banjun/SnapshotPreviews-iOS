@@ -1,0 +1,6 @@
+framework module SnapshotPreviewsCore {
+  umbrella header "SnapshotPreviewsCore-umbrella.h"
+
+  export *
+  module * { export * }
+}

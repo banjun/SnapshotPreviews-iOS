@@ -1,0 +1,21 @@
+{
+  "name": "SnapshotPreviewsCore",
+  "version": "0.0.1",
+  "summary": "A short description of SnapshotPreviewsCore.",
+  "description": "A short description of SnapshotPreviewsCore.",
+  "homepage": "https://github.com/EmergeTools/SnapshotPreviews-iOS",
+  "license": "MIT",
+  "authors": "banjun",
+  "platforms": {
+    "ios": "15.0"
+  },
+  "source": {
+    "git": "https://github.com/EmergeTools/SnapshotPreviews-iOS",
+    "tag": "0.0.1"
+  },
+  "source_files": "Sources/SnapshotPreviewsCore/**/*.swift",
+  "xcconfig": {
+    "ARCHS": "$(ARCHS_STANDARD) arm64e",
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited) \"${PODS_XCFRAMEWORKS_BUILD_DIR}/PreviewsSupport\""
+  }
+}

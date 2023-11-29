@@ -1,0 +1,3 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PreviewGallery.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotPreferences.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotPreviewsCore.framework
