@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '15.0'
+
+target 'DemoApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod "PreviewGallery", :path => ".."
+  pod "SnapshotPreviewsCore", :path => ".."
+  pod "PreviewsSupport", :path => ".."
+  pod "SnapshotPreferences", :path => ".."
+
+  # Pods for DemoApp
+
+  target 'DemoAppUITests' do
+    # Pods for testing
+  end
+
+end
+
+target 'DemoModule' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DemoModule
+
+end
+
+post_install do |pi|
+  UI.info "⚠️  run patch after pod install:"
+  UI.info "⚡ patch -p2 < PodPatch-add-core-deps.patch"
+  UI.info "... or manually add framework dependencies on Pods targets, PreviewGallery deps on SnapshotPreviewsCore and SnapshotPreferences deps on SnapshotPreviewsCore"
+end

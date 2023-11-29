@@ -1,0 +1,6 @@
+framework module SnapshotPreferences {
+  umbrella header "SnapshotPreferences-umbrella.h"
+
+  export *
+  module * { export * }
+}

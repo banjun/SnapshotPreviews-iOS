@@ -1,0 +1,20 @@
+{
+  "name": "PreviewsSupport",
+  "version": "0.0.1",
+  "summary": "A short description of PreviewsSupport.",
+  "description": "A short description of PreviewsSupport.",
+  "homepage": "https://github.com/EmergeTools/SnapshotPreviews-iOS",
+  "license": "MIT",
+  "authors": "banjun",
+  "platforms": {
+    "ios": "15.0"
+  },
+  "source": {
+    "git": "https://github.com/EmergeTools/SnapshotPreviews-iOS",
+    "tag": "0.0.1"
+  },
+  "vendored_frameworks": "PreviewsSupport/PreviewsSupport.xcframework",
+  "xcconfig": {
+    "ARCHS": "$(ARCHS_STANDARD) arm64e"
+  }
+}

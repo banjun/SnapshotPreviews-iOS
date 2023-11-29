@@ -48,13 +48,13 @@ private func parseConformance(conformance: UnsafePointer<ProtocolConformanceDesc
   }
   let descriptorOffset = Int(conformance.pointee.protocolDescriptor & ~1)
   let jumpPtr = UnsafeRawPointer(conformance).advanced(by: MemoryLayout<ProtocolConformanceDescriptor>.offset(of: \.protocolDescriptor)!).advanced(by: descriptorOffset)
-  let address = jumpPtr.load(as: UInt64.self)
+  let address = jumpPtr.load(as: UInt.self)
 
   // Address will be 0 if the protocol is not available (such as only defined on a newer OS)
   guard address != 0 else {
     return nil
   }
-  let protoPtr = UnsafeRawPointer(bitPattern: UInt(address))!
+  guard let protoPtr = UnsafeRawPointer(bitPatternStrippingPointerAuthentication: address) else { return nil }
   let proto = protoPtr.load(as: ProtocolDescriptor.self)
   let namePtr = protoPtr.advanced(by: MemoryLayout<ProtocolDescriptor>.offset(of: \.name)!).advanced(by: Int(proto.name))
   let protocolName = String(cString: namePtr.assumingMemoryBound(to: CChar.self))
@@ -68,7 +68,8 @@ private func parseConformance(conformance: UnsafePointer<ProtocolConformanceDesc
   if let name = getTypeName(descriptor: descriptor),
      [ContextDescriptorKind.Class, ContextDescriptorKind.Struct, ContextDescriptorKind.Enum].contains(descriptor.pointee.flags.kind) {
     let accessFunctionPointer = UnsafeRawPointer(descriptor).advanced(by: MemoryLayout<TargetModuleContextDescriptor>.offset(of: \.accessFunction)!).advanced(by: Int(descriptor.pointee.accessFunction))
-    let accessFunction = unsafeBitCast(accessFunctionPointer, to: (@convention(c) () -> UInt64).self)
+    guard let fp = UnsafeRawPointer(signingUnauthenticatedFunctionPointer: accessFunctionPointer) else { return nil }
+    let accessFunction = unsafeBitCast(fp, to: (@convention(c) () -> UInt64).self)
     return (name, accessFunction, protocolName)
   }
   return nil

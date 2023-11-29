@@ -8,7 +8,7 @@
 import Foundation
 import SnapshotPreviewsCore
 
-extension Preview {
+extension SnapshotPreviewsCore.Preview {
 
   var requiresFullScreen: Bool {
     switch layout {

@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-DemoApp-DemoAppUITests/Pods-DemoApp-DemoAppUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/PreviewGallery/PreviewGallery.framework
+${BUILT_PRODUCTS_DIR}/SnapshotPreferences/SnapshotPreferences.framework
+${BUILT_PRODUCTS_DIR}/SnapshotPreviewsCore/SnapshotPreviewsCore.framework
