@@ -13,7 +13,7 @@
     "git": "https://github.com/EmergeTools/SnapshotPreviews-iOS",
     "tag": "0.0.1"
   },
-  "source_files": "Sources/SnapshotPreviewsCore/**/*.swift",
+  "source_files": "Sources/SnapshotPreviewsCore/**/*.{h,m,swift}",
   "xcconfig": {
     "ARCHS": "$(ARCHS_STANDARD) arm64e",
     "FRAMEWORK_SEARCH_PATHS": "$(inherited) \"${PODS_XCFRAMEWORKS_BUILD_DIR}/PreviewsSupport\""

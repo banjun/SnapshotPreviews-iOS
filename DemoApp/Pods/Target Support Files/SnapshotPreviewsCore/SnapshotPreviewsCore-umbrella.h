@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "arm64eSupport.h"
 
 FOUNDATION_EXPORT double SnapshotPreviewsCoreVersionNumber;
 FOUNDATION_EXPORT const unsigned char SnapshotPreviewsCoreVersionString[];

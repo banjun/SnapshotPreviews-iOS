@@ -10,6 +10,6 @@ A short description of SnapshotPreviewsCore.
   spec.author             = "banjun"
   spec.platform     = :ios, "15.0"
   spec.source       = { :git => "https://github.com/EmergeTools/SnapshotPreviews-iOS", :tag => "#{spec.version}" }
-  spec.source_files  = "Sources/SnapshotPreviewsCore/**/*.swift"
+  spec.source_files  = "Sources/SnapshotPreviewsCore/**/*.{h,m,swift}"
   spec.xcconfig = { :ARCHS => '$(ARCHS_STANDARD) arm64e', :FRAMEWORK_SEARCH_PATHS => '$(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/PreviewsSupport"' }
 end
